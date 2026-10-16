@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 90-degree sharp UI — absolutely no rounded corners */
+* { border-radius: 0 !important; }
+html, body { max-width: 100%; overflow-x: hidden; }
+body {
+  background: #09090B;
+  color: #e8eaed;
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+/* large touch targets */
+button, a, input, select { min-height: 44px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid #2a2e34;
+  background: #1b1e22;
+  color: #e8eaed;
+  padding: 12px 14px;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: #fff; color: #000; border-color: #fff; }
+.btn-secondary { border-color: #2563eb; color: #93c5fd; background: #0b1425; }
+.btn-good { border-color: #22c55e; color: #22c55e; }
+.btn-danger { border-color: #ef4444; color: #ef4444; }
+input, select, textarea {
+  background: #0f1113 !important;
+  border: 1px solid #2a2e34 !important;
+  color: #e8eaed !important;
+  padding: 12px !important;
+  font-size: 16px !important; /* prevents iOS zoom */
+  width: 100%;
+}
+/* bottom nav safe area */
+/* Search field — icon owns a fixed left slot; text always starts after it.
+   The padding-left needs !important to beat the global input padding rule. */
+.search-field { position: relative; display: block; width: 100%; min-width: 0; }
+.search-field .search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: #9aa0a8;
+}
+.search-field .search-input {
+  padding-left: 40px !important;
+  padding-right: 12px !important;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+/* Creator social buttons: compact so labels never wrap mid-word at 320px. */
+.social-btn {
+  font-size: 12px !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+}
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }.no-hscroll { max-width: 100vw; overflow-x: hidden; }
+.hscroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.card { background: #111316; border: 1px solid #2a2e34; }
+.card2 { background: #16191d; border: 1px solid #2a2e34; }
+.badge { font-size: 11px; font-weight: 800; letter-spacing: 0.08em; padding: 4px 8px; display: inline-block; }
+.badge-good { background: #22c55e; color: #04120a; }
+.badge-better { background: #eab308; color: #1a1400; }
+.badge-best { background: #3b82f6; color: #fff; }
+.progress { height: 12px; background: #1e2126; border: 1px solid #2a2e34; }
+.progress > div { height: 100%; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Admin operations surface */
+.admin-shell { display: grid; grid-template-columns: 210px minmax(0, 1fr); max-width: 1400px; margin: 0 auto; min-height: calc(100vh - 104px); }
+.admin-nav { border-right: 1px solid #26344a; padding: 14px 10px; background: #080d16; }
+.admin-nav button, .admin-nav-link { display: flex; align-items: center; gap: 9px; width: 100%; min-height: 42px; padding: 9px 10px; color: #9aa0a8; text-align: left; font-size: 12px; font-weight: 800; letter-spacing: .04em; }
+.admin-nav button:hover, .admin-nav-link:hover, .admin-nav-active { color: #dbeafe !important; background: #10213a; }
+.admin-content { min-width: 0; padding: 14px; background: linear-gradient(135deg, #09090b, #07101d); }
+.admin-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.admin-metric { border: 1px solid #26344a; background: #0d1420; padding: 13px; min-width: 0; }
+.admin-metric strong { display: block; font-size: 24px; margin-top: 5px; color: #bfdbfe; overflow-wrap: anywhere; }
+.admin-metric span { display: block; margin-top: 3px; }
+.admin-row { border-top: 1px solid #202b3b; padding: 8px 0; }
+.admin-trend { display: flex; align-items: end; gap: 6px; height: 140px; padding-top: 18px; overflow-x: auto; }
+.admin-trend > div { display: flex; flex-direction: column; justify-content: end; align-items: center; gap: 5px; min-width: 34px; height: 100%; }
+.admin-trend i { display: block; width: 18px; min-height: 6px; background: #3b82f6; border: 1px solid #93c5fd; }
+.admin-trend span { font-size: 9px; color: #9aa0a8; writing-mode: vertical-rl; transform: rotate(180deg); }
+.admin-table-wrap { overflow-x: auto; border: 1px solid #26344a; background: #0d1118; }
+.admin-table { width: 100%; min-width: 720px; border-collapse: collapse; font-size: 12px; }
+.admin-table th { color: #93c5fd; background: #101b2c; font-size: 10px; letter-spacing: .08em; text-align: left; }
+.admin-table th, .admin-table td { border-bottom: 1px solid #202b3b; padding: 10px; vertical-align: top; }
+.admin-table td small { display: block; color: #9aa0a8; margin-top: 3px; overflow-wrap: anywhere; }
+.admin-small-btn { width: auto; min-height: 32px; padding: 5px 7px; margin: 2px; border: 1px solid #385a86; color: #bfdbfe; background: #0d1b2e; font-size: 10px; font-weight: 800; }
+.admin-alert { padding: 11px 13px; border: 1px solid; margin-bottom: 10px; font-size: 13px; }
+.admin-alert-error { border-color: #ef4444; color: #fecaca; background: #2b1015; }
+.admin-alert-success { border-color: #22c55e; color: #bbf7d0; background: #0b2217; }
+@media (max-width: 800px) {
+  .admin-shell { display: block; }
+  .admin-nav { display: flex; gap: 5px; overflow-x: auto; border-right: 0; border-bottom: 1px solid #26344a; padding: 8px; }
+  .admin-nav .mono, .admin-nav span, .admin-nav-link { display: none; }
+  .admin-nav button { width: auto; min-width: 48px; justify-content: center; padding: 8px; }
+  .admin-nav button svg { flex: 0 0 auto; }
+  .admin-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-content { padding: 10px; }
+}
+
+/* Muscle analysis card — normal document flow, natural height.
+   No sticky/fixed/absolute positioning: the card grows with its content,
+   the button stays inside, and the next section starts after the card. */
+.muscle-analysis-card {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: auto;
+  padding: 20px 12px 16px;
+  margin-bottom: 12px;
+  overflow: visible;
+  background: #111316;
+  border: 1px solid #3b82f6;
+}
+.muscle-analysis-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+.muscle-analysis-header b {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.muscle-analysis-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  margin-top: 8px;
+  min-width: 0;
+}
+.muscle-analysis-stats > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.muscle-analysis-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 16px;
+  padding-top: 4px;
+  min-width: 0;
+}
+.muscle-analysis-actions button,
+.muscle-analysis-actions a {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 16px;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.muscle-analysis-card + .deep-muscles-section {
+  margin-top: 12px;
+}
+/* Warning variant (e.g. model-limitation card): same flow, yellow border. */
+.muscle-analysis-card--warning {
+  border-color: #eab308;
+}
+.muscle-analysis-content {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}

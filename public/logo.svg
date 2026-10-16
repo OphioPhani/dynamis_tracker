@@ -1,0 +1,20 @@
+<svg viewBox="0 0 780 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dynamis Tracker full logo">
+  <g transform="translate(10,10) scale(0.390625)">
+    <g fill="#22C55E">
+      <rect x="124" y="88" width="60" height="336"/>
+      <rect x="124" y="88" width="212" height="54"/>
+      <rect x="124" y="370" width="212" height="54"/>
+      <rect x="336" y="150" width="44" height="54"/>
+      <rect x="336" y="232" width="72" height="54"/>
+      <rect x="336" y="314" width="100" height="54"/>
+    </g>
+    <g fill="#3B82F6">
+      <rect x="184" y="286" width="34" height="84"/>
+      <rect x="230" y="246" width="34" height="124"/>
+      <rect x="276" y="206" width="34" height="164"/>
+    </g>
+    <rect x="124" y="440" width="312" height="12" fill="#E8EAED"/>
+  </g>
+  <text x="232" y="108" font-family="'Space Grotesk','Inter',Arial,Helvetica,sans-serif" font-weight="900" font-size="62" letter-spacing="6" fill="#E8EAED">DYNAMIS</text>
+  <text x="232" y="172" font-family="'Space Grotesk','Inter',Arial,Helvetica,sans-serif" font-weight="900" font-size="62" letter-spacing="6" fill="#22C55E">TRACKER</text>
+</svg>
